@@ -34,8 +34,10 @@ const BackBtn = styled.button`
     cursor: pointer;
     transition: all 0.3s;
     font-weight: 600;
+    
     &:hover {
         background-color: #848383;
+        transform: translateX(-4px);
     }
 `;
 
@@ -46,10 +48,10 @@ const Article = styled.article`
     display: flex;
     overflow: hidden;
     height: 600px;
-`;
 
-const MoviePoster = styled.img`
-    width: 50%;
+    img {
+        width: 50%;
+    }
 `;
 
 const Content = styled.div`
@@ -79,6 +81,7 @@ const Plot = styled.div`
     margin-top: 20px;
     flex: 1;
     overflow-y: auto;
+    line-height: 1.6;
 `;
 
 function Detail() {
@@ -98,9 +101,9 @@ function Detail() {
 
     return (
         <Container>
-            <BackBtn onClick={() => navigate(-1)}>뒤로 가기 </BackBtn>
+            <BackBtn onClick={() => navigate(-1)}>&larr; Back </BackBtn>
             <Article>
-                <MoviePoster src={movie.Poster} alt={movie.Title} />
+                <img src={movie.Poster} alt={movie.Title} />
                 <Content>
                     <h2>{movie.Title}</h2>
                     <Year>{movie.Year}</Year>

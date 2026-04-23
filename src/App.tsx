@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Home from "./pages/Home.tsx";
 import Search from "./pages/Search.tsx";
 import Detail from "./pages/Detail.tsx";
-import GlobalStyle from "./styles.GlobalStyle.ts";
+import GlobalStyle from "./styles/GlobalStyle.ts";
 
 function App() {
     return (

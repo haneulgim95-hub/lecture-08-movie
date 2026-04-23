@@ -3,9 +3,10 @@ import { useNavigate } from "react-router";
 import styled from "styled-components";
 
 const Box = styled.form`
-    width: 100%;
+    width: 500px;
     display: flex;
     gap: 8px;
+    margin-top: 12px;
 `;
 
 const Input = styled.input`
@@ -46,6 +47,14 @@ function SearchBar() {
         if (!k) return;
 
         navigate(`/search?keyword=${encodeURIComponent(keyword)}`);
+        // 사용자를 강제 이동 시키는데(Link나 a태그나, navigate), 그 주소에 첫 글자가 /로 시작하지 않으면
+        // 지금 현재의 주소 + search로 이동시킴
+        // 그 주소에 첫 글자가 /로 시작하면
+        // /search로 이동시킴
+
+        // 지금 현재 사용자가 보고 있는 페이지: board/3
+        // 이 상태에서 사용자를 "search"주소로 이동시킨다면 => board/3/search
+        // 사용자를 "/search"로 이동시킨다면 => /search로 이동된다.
     };
 
     const onChange = (e: ChangeEvent<HTMLInputElement, HTMLInputElement>) =>
@@ -55,7 +64,7 @@ function SearchBar() {
         <Box onSubmit={onSubmit}>
             <Input onChange={onChange} />
             <Button type={"submit"}>
-                검색
+                Search
             </Button>
         </Box>
     );

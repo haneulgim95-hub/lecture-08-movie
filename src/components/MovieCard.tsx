@@ -27,6 +27,10 @@ const StyledLink = styled(Link)`
         object-fit: cover;
         border-radius: 4px;
     }
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
 `;
 
 
@@ -34,6 +38,10 @@ const Title = styled.h3`
     color: #1a1a1a;
     font-weight: 700;
     margin-bottom: 4px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 `;
 
 const Year = styled.span`

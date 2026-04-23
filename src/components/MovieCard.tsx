@@ -49,16 +49,21 @@ const Year = styled.span`
     color: #888;
 `;
 
+const Info = styled.div`
+    flex: 1;
+    min-width: 0;
+`;
+
 type Props = { movie: MovieType };
 
 function MovieCard({ movie }: Props) {
     return (
         <StyledLink to={`/detail/${movie.imdbID}`}>
             <img src={movie.Poster} alt={movie.Title} />
-            <div>
+            <Info>
                 <Title>{movie.Title}</Title>
                 <Year>{movie.Year}</Year>
-            </div>
+            </Info>
         </StyledLink>
     );
 }
